@@ -4,7 +4,9 @@
  * Plugin Name: Dynamic API Integration
  * Description: A plugin for dynamic API integration in the Gutenberg block editor.
  * Version: 1.0.0
- * Author: Your Name
+ * Author: Karishma Shukla
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
