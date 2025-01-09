@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Dynamic API Integration Plugin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Plugin Information
+**Plugin Name:** Dynamic API Integration  
+**Description:** A WordPress plugin that integrates with external APIs dynamically, allowing users to fetch and display API data within Gutenberg blocks.  
+**Version:** 1.0.0  
+**Author:** Your Name  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
+- Dynamically fetch data from external APIs.
+- Display API data within a custom Gutenberg block.
+- Configure API URL, request type, and parameters from the WordPress admin settings.
+- Supports both GET and POST request methods.
+- REST API endpoint for secure communication.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
+1. Download the plugin ZIP file.
+2. Go to your WordPress admin dashboard.
+3. Navigate to **Plugins > Add New**.
+4. Click **Upload Plugin** and select the ZIP file.
+5. Click **Install Now** and then **Activate**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Usage
+### 1. Configure API Settings
+1. Navigate to **Settings > API Integration** in the WordPress admin panel.
+2. Configure the following options:
+   - **API URL:** Enter the external API endpoint.
+   - **Request Type:** Select `GET` or `POST`.
+   - **Parameters:** Provide JSON-formatted parameters (e.g., `{ "key": "value" }`).
+3. Save the settings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Add the Gutenberg Block
+1. Open the WordPress block editor (Gutenberg).
+2. Search for the **Dynamic API Integration** block.
+3. Add the block to your post or page.
+4. Preview or publish the post to view the fetched API data.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## REST API Endpoint
+This plugin exposes a custom REST API endpoint:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Endpoint:** `/wp-json/dai/v1/fetch-data`
+- **Request Type:** Configurable via the admin settings.
+- **Parameters:** Configurable via the admin settings.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Development
+### Key Files
+- `dynamic-api-integration.php`: Main plugin file.
+- `build/index.js`: JavaScript for the Gutenberg block.
+- `build/editor.css`: Editor-specific styles.
+- `build/style-index.css`: Frontend styles.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Custom Functions
+#### `dai_fetch_api_data_rest(WP_REST_Request $request)`
+Handles requests to fetch data from the external API. Utilizes WordPress functions for secure and efficient API communication.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `dai_register_settings()`
+Registers plugin settings in the WordPress admin panel.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### `dai_register_block()`
+Registers the custom Gutenberg block with the WordPress editor.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Troubleshooting
+- **"API URL is not configured" Error:** Ensure the API URL is entered in the settings.
+- **"Failed to fetch API data" Error:** Verify the external API endpoint and parameters.
+- **Block Not Displaying Data:** Check the REST API response and console logs for errors.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Changelog
+### 1.0.0
+- Initial release.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
+This plugin is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Support
+For support, please contact the plugin developer or raise an issue in the plugin repository.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
