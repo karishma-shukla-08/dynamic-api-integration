@@ -11,7 +11,7 @@ const Edit = () => {
 
   useEffect(() => {
       const fetchApiData = async () => {
-        const apiUrl = `${window.location.origin}/checker/wp-json/dai/v1/fetch-data`;
+        const apiUrl = `${window.location.origin}/wp-json/dai/v1/fetch-data`;
 
           setLoading(true);
           setError(null);
